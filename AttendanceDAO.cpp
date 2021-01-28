@@ -114,11 +114,11 @@ bool AttendanceDAO::updateAttendance(const Attendance &attendance){
     query.bindValue(":calculated_day",attendance.getCalculatedDay());
     string strDate = to_string(attendance.getAttDate().year)+"-"+to_string(attendance.getAttDate().month)+"-"+to_string(attendance.getAttDate().day);
     query.bindValue(":att_date",QString::fromStdString(strDate));
-    qDebug("日期=%s\n",strDate.data());
+    //qDebug("日期=%s\n",strDate.data());
 
-    qDebug("%s",query.lastQuery().toStdString().data());
+    //qDebug("%s",query.lastQuery().toStdString().data());
     bool result = query.exec();
-    qDebug("SQL语句执行:  %d\n",result);
+    //qDebug("SQL语句执行:  %d\n",result);
     return result;
 }
 
@@ -141,18 +141,18 @@ bool AttendanceDAO::addAttendance(const Attendance &attendance){
     query.bindValue(":calculated_day",attendance.getCalculatedDay());
     string strDate = to_string(attendance.getAttDate().year)+"-"+to_string(attendance.getAttDate().month)+"-"+to_string(attendance.getAttDate().day);
     query.bindValue(":att_date",QString::fromStdString(strDate));
-    qDebug("日期=%s\n",strDate.data());
-    qDebug("%s",query.lastQuery().toStdString().data());
+    //qDebug("日期=%s\n",strDate.data());
+    //qDebug("%s",query.lastQuery().toStdString().data());
     bool result = query.exec();
-    qDebug("SQL语句执行:  %d\n",result);
+    //qDebug("SQL语句执行:  %d\n",result);
     return result;
 }
 bool AttendanceDAO::deleteAttendance(const int id){
     QSqlQuery query;
     query.prepare("delete from attendance where attendance_id = :id"); //准备执行SQL查询
     query.bindValue(":id",id);
-    qDebug("%s",query.lastQuery().toStdString().data());
+    //qDebug("%s",query.lastQuery().toStdString().data());
     bool result = query.exec();
-    qDebug("SQL语句执行:  %d\n",result);
+    //qDebug("SQL语句执行:  %d\n",result);
     return result;
 }

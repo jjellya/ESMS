@@ -7,6 +7,10 @@ class Salary {
 public:
     Salary();
 
+    Salary(int salaryId, int employeeId, int baseSalary, int postSalary, int meritSalary, int socialSecurity,
+               int fullAttBonus, int absentDeduction, int lateDeduction, int earlyDeduction, int overtimeBonus,
+               int beforeTax, int afterTax, const string &salaryDate);
+
     Salary(const Salary &another);
 
     virtual ~Salary();

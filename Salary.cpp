@@ -1,6 +1,28 @@
 #include "Salary.h"
+#include "QDebug"
 
 Salary::Salary() {}
+
+Salary::Salary(int salaryId, int employeeId, int baseSalary, int postSalary, int meritSalary, int socialSecurity,
+               int fullAttBonus, int absentDeduction, int lateDeduction, int earlyDeduction, int overtimeBonus,
+               int beforeTax, int afterTax, const string &p_salaryDate) : salary_id(salaryId), employee_id(employeeId),
+                                                                      base_salary(baseSalary), post_salary(postSalary),
+                                                                      merit_salary(meritSalary),
+                                                                      social_security(socialSecurity),
+                                                                      full_att_bonus(fullAttBonus),
+                                                                      absent_deduction(absentDeduction),
+                                                                      late_deduction(lateDeduction),
+                                                                      early_deduction(earlyDeduction),
+                                                                      overtime_bonus(overtimeBonus),
+                                                                      before_tax(beforeTax), after_tax(afterTax) {
+    if(p_salaryDate.size()>=10) {
+        qDebug("p_salaryDate.size = %d, %s\n",p_salaryDate.size(),p_salaryDate.data());
+        this->salary_date.year =  atoi(p_salaryDate.substr(0,4).data());//将参数的年份(string类型)转化为int类型并赋值给salary_date.year成员参数 
+        this->salary_date.month =  atoi(p_salaryDate.substr(5,7).data());//将参数的年份(string类型)转化为int类型并赋值给salary_date.month成员参数
+        this->salary_date.day =  atoi(p_salaryDate.substr(8,10).data());//将参数的年份(string类型)转化为int类型并赋值给salary_date.day成员参数
+        qDebug("year = %d,month = %d,day = %d\n",salary_date.year,salary_date.month,salary_date.day);
+    }
+}
 
 Salary::~Salary() {
 

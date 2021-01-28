@@ -11,6 +11,7 @@
 #include "UserDAO.h"
 #include "EmployeeDAO.h"
 #include "AttendanceDAO.h"
+#include "SalaryDAO.h"
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -92,5 +93,23 @@ void Widget::on_pushButton_clicked()
 //      attendanceDAO.addAttendance(att2);
 
 //      attendanceDAO.deleteAttendance(4);
+
+       SalaryDAO salaryDAO;
+       salaryDAO.getSalaryPage(0,10);
+
+       Salary sal3 = salaryDAO.getSalaryById(2);
+       qDebug("sal3日期= %d / %d / %d\n",sal3.getSalaryDate().year,sal3.getSalaryDate().month,sal3.getSalaryDate().day);
+
+       DATE sal3Date; sal3Date.day=30;sal3Date.month=1;sal3Date.year=2021;
+
+       sal3.setSalaryDate(sal3Date);
+       sal3.setAfterTax(9999);
+       salaryDAO.updateSalary(sal3);
+
+       sal3.setEmployeeId(3);
+       salaryDAO.addSalary(sal3);
+
+
+       salaryDAO.deleteSalary(4);
 
 }
