@@ -1,4 +1,6 @@
-QT       += core gui
+QT       += core gui sql
+
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,10 +18,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Attendance.cpp \
+    AttendanceDAO.cpp \
+    Employee.cpp \
+    Employee.cpp \
+    EmployeeDAO.cpp \
+    Salary.cpp \
+    Salary.cpp \
+    SalaryDAO.cpp \
+    User.cpp \
+    UserDAO.cpp \
     main.cpp \
     widget.cpp
 
 HEADERS += \
+    Attendance.h \
+    AttendanceDAO.h \
+    Employee.h \
+    Employee.h \
+    EmployeeDAO.h \
+    Global.h \
+    Salary.h \
+    Salary.h \
+    SalaryDAO.h \
+    User.h \
+    UserDAO.h \
+    db_connection.h \
     widget.h
 
 FORMS += \
