@@ -3,8 +3,28 @@
 
 Employee::Employee() {}
 
+Employee::Employee(int employeeId, const string &employeeName, const string &phone, int degree, int status,
+                   int department, const string &email, int isFulltime, const string &p_hiredate) : employee_id(employeeId),
+                                                                                                employee_name(employeeName),
+                                                                                                phone(phone),
+                                                                                                degree(degree),
+                                                                                                status(status),
+                                                                                                department(department),
+                                                                                                email(email),is_fulltime(isFulltime) {
+    if(p_hiredate.size()>=10) {
+        hiredate.year =  atoi(p_hiredate.substr(0,4).data());//将参数的年份(string类型)转化为int类型并赋值给hiredate.year成员参数
+        hiredate.month =  atoi(p_hiredate.substr(5,7).data());//将参数的年份(string类型)转化为int类型并赋值给hiredate.month成员参数
+        hiredate.day =  atoi(p_hiredate.substr(8,10).data());//将参数的年份(string类型)转化为int类型并赋值给hiredate.day成员参数
+    }
+}
+
 Employee::~Employee() {
 
+}
+
+string Employee::toString(){
+    string str = "工号: "+to_string(employee_id)+", 姓名: "+employee_name +", 手机号:  "+phone;
+    return str;
 }
 
 int Employee::getEmployeeId() const {

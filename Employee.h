@@ -7,7 +7,14 @@ class Employee {
 public:
     Employee();
 
+    Employee(int employeeId, const string &employeeName, const string &phone, int degree, int status, int department,
+                 const string &email, int isFulltime, const string &hiredate);
+
     virtual ~Employee();
+
+    string toString();
+
+    /*Getter & Setter  */
 
     int getEmployeeId() const;
 

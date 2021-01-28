@@ -66,6 +66,7 @@ DEFINES += QT_NO_CAST_TO_ASCII QT_NO_CAST_FROM_ASCII
 
 ```
 1.实现了UserDAO
-2.编写了SalaryDAO、AttendanceDAO、EmployeeDAO的头文件方法名，还未实现。
+2.编写了SalaryDAO、AttendanceDAO的头文件方法名，还未实现。
+3.实现了EmployeeDAO
 ```
 

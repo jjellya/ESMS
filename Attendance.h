@@ -7,6 +7,9 @@ class Attendance {
 public:
     Attendance();
 
+    Attendance(int attendanceId, int employeeId, int leftEarly, int late, int nonPunch, int overtime, int leave,
+                   int calculatedDay, const string &attDate);
+
     virtual ~Attendance();
 
     int getAttendanceId() const;

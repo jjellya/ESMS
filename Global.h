@@ -11,4 +11,5 @@ typedef struct date{
     int month;
     int day;
 }DATE, *Date;
+#define ARRARY_MAXSIZE 255
 #endif // GLOBAL_H

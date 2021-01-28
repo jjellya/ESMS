@@ -9,6 +9,8 @@
 #include <QtSql>
 #include "db_connection.h"
 #include "UserDAO.h"
+#include "EmployeeDAO.h"
+#include "AttendanceDAO.h"
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -23,6 +25,7 @@ Widget::Widget(QWidget *parent)
     ui->setupUi(this);
     ui->tableView123->setModel(model);
     ui->tableView123->setEditTriggers(QAbstractItemView::NoEditTriggers);  //设置视图为只读模式
+    ui->tableView123->setUpdatesEnabled(true); //恢复界面刷新
 
 }
 
@@ -50,11 +53,31 @@ Widget::~Widget()
 void Widget::on_pushButton_clicked()
 {
     /*测试内容,无需理会*/
-    UserDAO userDAO;
-    User *userArr = userDAO.getAllUser();
-    //QString qstr = QString::fromStdString(userArr[0].getUserName());
-    qDebug("%s",userArr[0].getUserId().data());
+//    UserDAO userDAO;
+//    User *userArr = userDAO.getAllUser();
+//    //QString qstr = QString::fromStdString(userArr[0].getUserName());
+//    qDebug("%s",userArr[0].getUserId().data());
 
-    User admin = userDAO.getUserById("admin");
-    qDebug("admin的密码为%s",admin.getUserPwd().data());
+//    User admin = userDAO.getUserById("admin");
+//    qDebug("admin的密码为%s",admin.getUserPwd().data());
+
+
+//    EmployeeDAO employeeDAO;
+//    Employee *employeeArr = employeeDAO.getEmployeePage(0,10);
+
+//    Employee emp5 = employeeDAO.getEmployeeById(5);
+//    qDebug("%s\n",emp5.toString().data());
+//    string strName = "李四";
+//    emp5.setEmployeeName(strName);
+//    employeeDAO.updateEmployee(emp5);
+
+//    emp5.setEmployeeName("汤学希headsomeboy ");
+//    employeeDAO.addEmployee(emp5);
+
+//    employeeDAO.deleteEmployee(28);
+
+      AttendanceDAO attendanceDAO;
+      attendanceDAO.getAttentancePage(0,10);
+
+
 }

@@ -19,9 +19,9 @@ QString qstr2 = QString::fromStdString(s);
 */
 User* UserDAO::getAllUser(){
     User *result;
-    result = new User[255];
-    int i = 0;
+    result = new User[ARRARY_MAXSIZE];
     QSqlQuery query;
+    int i = 0;
     query.exec("select * from user");
         while (true == query.next()) {  //一行一行遍历
             //取出当前行的内容，以列为单位
