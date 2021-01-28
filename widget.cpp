@@ -76,8 +76,21 @@ void Widget::on_pushButton_clicked()
 
 //    employeeDAO.deleteEmployee(28);
 
-      AttendanceDAO attendanceDAO;
-      attendanceDAO.getAttentancePage(0,10);
+//      AttendanceDAO attendanceDAO;
+//      attendanceDAO.getAttentancePage(0,10);
 
+//      Attendance att2 = attendanceDAO.getAttentanceById(2);
+
+//      DATE tomorrow;
+//      tomorrow.year=2021;tomorrow.month=1;tomorrow.day=30;
+//      Attendance *attArr3 = attendanceDAO.getAttentanceByDate(tomorrow);
+
+//      att2.setCalculatedDay(31);
+//      attendanceDAO.updateAttendance(att2);
+
+//      att2.setEmployeeId(4);
+//      attendanceDAO.addAttendance(att2);
+
+//      attendanceDAO.deleteAttendance(4);
 
 }
